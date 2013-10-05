@@ -60,12 +60,12 @@ for file in os.listdir("/usr/share/app-install/desktop"):
             name = ""
         # description
         try:
-            description = pkg.description
+            description = pkg.candidate.description
         except:
             description = ""
         # summary
         try:
-            summary = pkg.summary
+            summary = pkg.candidate.summary
         except:
             summary = ""
         # version

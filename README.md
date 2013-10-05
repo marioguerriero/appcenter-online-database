@@ -1,7 +1,7 @@
-appcenter-json
-=============
+### AppCenter online database ###
 
-A script to build the online AppCenter's application database.
+All the efforts made to build the AppCenter online database.
 
-Just run apps.py and apps-database.json will be updated.
-
+# Description
+ * apps.py - builds a .json app database from app-install-data informations
+ * backend/appcenter.vala - is a starting point for the Vala implementation of AppCenter desktop client
