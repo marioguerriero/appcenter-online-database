@@ -36,7 +36,10 @@ class Info:
                 "cost": self.cost }
         return dic
       
-        
+# Allowed categories        
+allowed_categories = [ "AudioVideo", "Audio", "Video", "Development",
+    "Education", "Game", "Graphics", "Network", "Office", "Science",
+    "Settings", "System", "Utility" ]
 
 # Load app-install-data infos
 print "Parsing infos..."
@@ -80,7 +83,13 @@ for file in os.listdir("/usr/share/app-install/desktop"):
             icon = "applications-other"
         # icon
         try:
-            category = parser.get("Desktop Entry", "Category").split(";")[0]
+            categories = parser.get("Desktop Entry", "Categories").split(";")
+            for cat in categories:
+                if cat in allowed_categories:
+                    if cat == "Audio" or cat == "Video":
+                        cat = "AudioVideo"
+                    category = cat
+                    break
         except:
             category = "Others"
         # author FIXME
